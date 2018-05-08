@@ -1,7 +1,8 @@
 class DestinationsController < ApplicationController
+  # token auth
   TOKEN = "secret"
   before_action :authenticate
-  
+
   def index
     @destinations = Destination.all
     json_response(@destinations)
@@ -38,7 +39,7 @@ private
   def destination_params
     params.permit(:country, :city, :description, :best_coffee)
   end
-
+# token auth
   def authenticate
       authenticate_or_request_with_http_token do |token, options|
         # Compare the tokens in a time-constant manner, to mitigate
