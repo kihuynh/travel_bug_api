@@ -1,3 +1,5 @@
 require 'rails_helper'
 
-it { should validate_presence_of(:country) }
+describe Destination do
+  it { should validate_presence_of :country }
+end
