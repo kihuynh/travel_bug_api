@@ -4,4 +4,7 @@ class Destination < ApplicationRecord
   validates :city, presence: true
   validates :description, presence: true
   validates :best_coffee, presence: true
+
+   # scope :search_country, -> (country) { where("country like ?", "%#{country}%")}
+  # scope :search_content, -> (content) { where("content like ?", "%#{content}%")}
 end
